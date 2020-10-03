@@ -1,7 +1,7 @@
 # Ubports Redmi7 / Redmi y3
 Ubuntu touch v2.0.0                                                      
 Halium 9 Based                                                            
-Status: Stable, unuficial                                      
+Status: Stable, unficial                                      
 Password is "phablet"                             
 Bugs: Fingerprint                                            
 Author: Telegram: @supirlelik96, 4pda: supirlelik86    
@@ -15,13 +15,17 @@ installation:
 0.5 Install TWRP          
 0.9 Reboot in TWRP
 1. Wipe system,art-cache,vendor,data or yes,
-2. flash UBports-vendor.zip
-3. flash ubports-gsi-xx.zip
-4. flash halium-boot.zip
-5. flash halium-ramdisk.zip
-6. flash apparmor.zip
-7. Reboot to system!
-8. Fix camera
+2. Run shell command (bash): 
+    
+    FILES=($(ls -l *.zip | awk '{print $9}')); for d in "${FILES[@]}"; do adb push $d /sdcard/$d; done
+
+3. Install UBports-vendor.zip
+   ubports-gsi-xx.zip
+   halium-boot.zip
+   halium-ramdisk.zip
+   apparmor.zip
+4. Reboot to system!
+5. Fix camera
 
 Fix camera:                                                         
     Password is "phablet"
